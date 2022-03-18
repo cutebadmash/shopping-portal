@@ -1,10 +1,11 @@
+
 pipeline {
   agent any
-
-  tools {
-	nodejs 'nodejs'
-	}
-
+  
+    tools {
+    nodejs 'nodejs'
+  }
+  
   stages {
     stage('compile-app') {
       steps {
@@ -25,7 +26,7 @@ pipeline {
       }
     }
   }
-}
+
   post {
     always {
       echo 'Standard Templated Pipeline'
