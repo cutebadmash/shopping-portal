@@ -1,10 +1,5 @@
 pipeline {
   agent any
-  
-    tools {
-    NodeJS 'nodejs'
-  }
-  
   stages {
     stage('compile-app') {
       steps {
@@ -24,11 +19,19 @@ pipeline {
         sh 'npm run package'
       }
     }
+    stage('archive-app') {
+      steps {
+        archiveArtifacts '**/distribution/*.zip'
+      }
+    }
   }
-
+  tools {
+    nodejs 'nodejs'
+  }
   post {
     always {
-      echo 'Standard Templated Pipeline'
+      echo 'Hey I know how to create pipeline as code :)'
     }
 
-  }
+  } 
+}
