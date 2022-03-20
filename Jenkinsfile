@@ -33,5 +33,5 @@ pipeline {
       echo 'Hey I know how to create pipeline as code :)'
     }
 
-  } 
-}
+  }
+
